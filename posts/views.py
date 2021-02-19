@@ -1,15 +1,15 @@
 from django.shortcuts import render
-from django.views.generic.list import ListView
+from django.views import View
 from .models import Post
 
 
 # Create your views here.
-class IndexPage(ListView):
-    queryset = Post.objects.all()
+class IndexPage(View):
+    model = Post
     template_name = "index.html"
 
-    def get_context_data(self, *args, object_list=None, **kwargs):
-        context = super(IndexPage, self).get_context_data(*args, **kwargs)
-        context["four_most_views"] = Post.objects.order_by("views")
-        print(context)
-        return context
+    def get(self, request, *args, **kwargs):
+        context = {}
+        four_most_views = self.model.objects.order_by("views")[:4]
+        context["four_most_views"] = four_most_views
+        return render(request, self.template_name, context)
