@@ -722,203 +722,28 @@
                 <span class="title-angle-shap"> روند ها </span>
             </h2>
             <div class="owl-carousel dot-style2" id="trending-slider">
-                <div class="item post-overaly-style post-md"
-                     style="background-image:url(images/news/health/image1.png)">
-                    <a href="#" class="image-link">&nbsp;</a>
-                    <div class="overlay-post-content">
-                        <div class="post-content">
-                            <div class="grid-category">
-                                <a class="post-cat sports" href="#">ورزشی</a>
-                            </div>
+                {% for post in rondHa %}
+                    <div class="item post-overaly-style post-md"
+                         style="background-image:url({{ post.image.url }})">
+                        <a href="#" class="image-link">&nbsp;</a>
+                        <div class="overlay-post-content">
+                            <div class="post-content">
+                                <div class="grid-category">
+                                    <a class="post-cat sports" href="#">{{ post.category }}</a>
+                                </div>
 
-                            <h2 class="post-title">
-                                <a href="#">نانسی ژانگ یک زن تجاری چینی </a>
-                            </h2>
-                            <div class="post-meta">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                </ul>
+                                <h2 class="post-title">
+                                    <a href="#">{{ post.title }}</a>
+                                </h2>
+                                <div class="post-meta">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-user"></i> {{ post.author }}</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div><!-- Item 1 end -->
-                <div class="item post-overaly-style post-md" style="background-image:url(images/news/tech/image5.png)">
-                    <a href="#" class="image-link">&nbsp;</a>
-                    <div class="overlay-post-content">
-                        <div class="post-content">
-                            <div class="grid-category">
-                                <a class="post-cat tech" href="#">تکنولوژی</a>
-                            </div>
-
-                            <h2 class="post-title">
-                                <a href="#">برترین لپ تاپ های سال جدید</a>
-                            </h2>
-                            <div class="post-meta">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- Item 1 end -->
-                <div class="item post-overaly-style post-md"
-                     style="background-image:url(images/news/lifestyle/image3.png)">
-                    <a href="#" class="image-link">&nbsp;</a>
-                    <div class="overlay-post-content">
-                        <div class="post-content">
-                            <div class="grid-category">
-                                <a class="post-cat travel" href="#">مسافرت</a>
-                            </div>
-
-                            <h2 class="post-title">
-                                <a href="#">از دست دادن همه چیز سخته</a>
-                            </h2>
-                            <div class="post-meta">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- Item 1 end -->
-                <div class="item post-overaly-style post-md"
-                     style="background-image:url(images/news/fashion/image3.png)">
-                    <a href="#" class="image-link">&nbsp;</a>
-                    <div class="overlay-post-content">
-                        <div class="post-content">
-                            <div class="grid-category">
-                                <a class="post-cat fashion" href="#">مدل</a>
-                            </div>
-
-                            <h2 class="post-title">
-                                <a href="#">اسلحه ای که در گیلروی آتش گشود</a>
-                            </h2>
-                            <div class="post-meta">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- Item 1 end -->
-                <div class="item post-overaly-style post-md" style="background-image:url(images/news/tech/image5.png)">
-                    <a href="#" class="image-link">&nbsp;</a>
-                    <div class="overlay-post-content">
-                        <div class="post-content">
-                            <div class="grid-category">
-                                <a class="post-cat tech" href="#">تکنولوژی</a>
-                            </div>
-
-                            <h2 class="post-title">
-                                <a href="#">برترین لپ تاپ های سال جدید</a>
-                            </h2>
-                            <div class="post-meta">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- Item 1 end -->
-                <div class="item post-overaly-style post-md"
-                     style="background-image:url(images/news/health/image1.png)">
-                    <a href="#" class="image-link">&nbsp;</a>
-                    <div class="overlay-post-content">
-                        <div class="post-content">
-                            <div class="grid-category">
-                                <a class="post-cat travel" href="#">مسافرت</a>
-                            </div>
-
-                            <h2 class="post-title">
-                                <a href="#">از دست دادن همه چیز سخته</a>
-                            </h2>
-                            <div class="post-meta">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- Item 1 end -->
-                <div class="item post-overaly-style post-md" style="background-image:url(images/news/tech/image5.png)">
-                    <a href="#" class="image-link">&nbsp;</a>
-                    <div class="overlay-post-content">
-                        <div class="post-content">
-                            <div class="grid-category">
-                                <a class="post-cat fashion" href="#">مدل</a>
-                            </div>
-
-                            <h2 class="post-title">
-                                <a href="#">اسلحه ای که در گیلروی آتش گشود</a>
-                            </h2>
-                            <div class="post-meta">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- Item 1 end -->
-                <div class="item post-overaly-style post-md"
-                     style="background-image:url(images/news/lifestyle/image1.jpg)">
-                    <a href="#" class="image-link">&nbsp;</a>
-                    <div class="overlay-post-content">
-                        <div class="post-content">
-                            <div class="grid-category">
-                                <a class="post-cat tech" href="#">تکنولوژی</a>
-                            </div>
-
-                            <h2 class="post-title">
-                                <a href="#">برترین لپ تاپ های سال جدید</a>
-                            </h2>
-                            <div class="post-meta">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- Item 1 end -->
-                <div class="item post-overaly-style post-md"
-                     style="background-image:url(images/news/health/image2.png)">
-                    <a href="#" class="image-link">&nbsp;</a>
-                    <div class="overlay-post-content">
-                        <div class="post-content">
-                            <div class="grid-category">
-                                <a class="post-cat travel" href="#">مسافرت</a>
-                            </div>
-
-                            <h2 class="post-title">
-                                <a href="#">از دست دادن همه چیز سخته</a>
-                            </h2>
-                            <div class="post-meta">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- Item 1 end -->
-                <div class="item post-overaly-style post-md"
-                     style="background-image:url(images/news/fashion/image3.png)">
-                    <a href="#" class="image-link">&nbsp;</a>
-                    <div class="overlay-post-content">
-                        <div class="post-content">
-                            <div class="grid-category">
-                                <a class="post-cat fashion" href="#">مدل</a>
-                            </div>
-
-                            <h2 class="post-title">
-                                <a href="#">اسلحه ای که در گیلروی آتش گشود</a>
-                            </h2>
-                            <div class="post-meta">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- Item 1 end -->
+                    </div><!-- Item 1 end -->
+                {% endfor %}
             </div>
             <!-- most-populers end-->
         </div>

@@ -12,6 +12,7 @@ def get_name_ext(filepath):
 def upload_image_path(instance, filepath):
     name, ext = get_name_ext(filepath)
     path = f"posts/{instance.category}-{instance.id}{ext}"
+    print(path)
     return path
 
 
