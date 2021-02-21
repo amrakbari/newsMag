@@ -3,6 +3,7 @@
 
 <head>
 
+    {% load static %}
     <!-- Basic Page Needs
 	================================================== -->
     <meta charset="utf-8">
@@ -13,8 +14,6 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    {% load static %}
 
     <!--Favicon-->
     <link rel="shortcut icon" href={% static "images/favicon.ico" %} type="image/x-icon">
@@ -675,15 +674,15 @@
                 <div class="row ts-gutter-20">
                     <div class="col-md-12">
                         <div class="post-overaly-style post-md ml-8"
-                             style="background-image:url(images/news/lifestyle/image2.png)">
+                             style="background-image:url({{ last_post.image.url }})">
                             <div class="post-content">
-                                <a class="post-cat lifestyle" href="#">سبک زندگی</a>
+                                <a class="post-cat lifestyle" href="#">{{ last_post.category }}</a>
                                 <h2 class="post-title title-md">
-                                    <a href="#">نانسی ژانگ یک زن شلوغ چینی و رسانه های اجتماعی</a>
+                                    <a href="#">{{ last_post.title }}</a>
                                 </h2>
                                 <div class="post-meta">
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
+                                        <li><a href="#"><i class="fa fa-user"></i>{{ last_post.author }}</a></li>
                                         <li><a href="#"><i class="icon icon-clock"></i> خرداد 1399</a></li>
                                     </ul>
                                 </div>
@@ -694,7 +693,7 @@
                         <div class="post-overaly-style post-sm overlay-primary  ml-8"
                              style="background-image:url(images/news/health/image1.png)">
                             <div class="post-content">
-                                <a class="post-cat health" href="#">سلامت</a>
+                                <a class="post-cat health" href="#">most likes....</a>
                                 <h2 class="post-title title-md">
                                     <a href="#">نانسی ژانگ یک زن شلوغ چینی و رسانه های اجتماعی</a>
                                 </h2>
@@ -719,10 +718,10 @@
     <div class="container">
         <div class="ts-grid-box">
             <h2 class="block-title">
-                <span class="title-angle-shap"> روند ها </span>
+                <span class="title-angle-shap"> آخرین اخبار </span>
             </h2>
             <div class="owl-carousel dot-style2" id="trending-slider">
-                {% for post in rondHa %}
+                {% for post in last_news_carousel %}
                     <div class="item post-overaly-style post-md"
                          style="background-image:url({{ post.image.url }})">
                         <a href="#" class="image-link">&nbsp;</a>
@@ -799,7 +798,7 @@
                             </a>
                         </li>
                     </ul>
-
+                    {#                    test comment#}
                     <div class="tab-content">
                         <div class="tab-pane active animated fadeInRight" id="tab_a">
                             <div class="row">
@@ -1933,186 +1932,7 @@
 </section><!-- First block end -->
 
 <!-- block slider -->
-<section class="block-slider">
-    <div class="container">
-        <div class="ts-grid-box">
-            <div class="owl-carousel dot-style2" id="post-block-slider">
-                <div class="item">
-                    <div class="post-block-style">
-                        <div class="post-thumb">
-                            <a href="#">
-                                <img class="img-fluid" src="images/news/lifestyle/image4.png" alt=""/>
-                            </a>
-                            <div class="grid-cat">
-                                <a class="post-cat tech" href="#">تکنولوژی</a>
-                            </div>
-                        </div>
 
-                        <div class="post-content">
-                            <h2 class="post-title">
-                                <a href="#">ستاره پاپ ژانگ رسانه های اجتماعی نیز بی گناه شناخته شده است</a>
-                            </h2>
-                            <div class="post-meta mb-7">
-                                <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                            </div>
-                        </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
-                </div><!-- slide-item end -->
-                <div class="item">
-                    <div class="post-block-style">
-                        <div class="post-thumb">
-                            <a href="#">
-                                <img class="img-fluid" src="images/news/fashion/image1.png" alt=""/>
-                            </a>
-                            <div class="grid-cat">
-                                <a class="post-cat lifestyle" href="#">سبک زندگی</a>
-                            </div>
-                        </div>
-
-                        <div class="post-content">
-                            <h2 class="post-title">
-                                <a href="#">جنیفر لوپز مجموعه دارایی خود را گسترش می دهد</a>
-                            </h2>
-                            <div class="post-meta mb-7">
-                                <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                            </div>
-                        </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
-                </div><!-- slide-item end -->
-                <div class="item">
-                    <div class="post-block-style">
-                        <div class="post-thumb">
-                            <a href="#">
-                                <img class="img-fluid" src="images/news/travel/image1.png" alt=""/>
-                            </a>
-                            <div class="grid-cat">
-                                <a class="post-cat travel" href="#">مسافرت</a>
-                            </div>
-                        </div>
-
-                        <div class="post-content">
-                            <h2 class="post-title">
-                                <a href="#">ما همیشه قبلاً ساکنان را گزارش کرده بودیم</a>
-                            </h2>
-                            <div class="post-meta mb-7">
-                                <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                            </div>
-                        </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
-                </div><!-- slide-item end -->
-                <div class="item">
-                    <div class="post-block-style">
-                        <div class="post-thumb">
-                            <a href="#">
-                                <img class="img-fluid" src="images/news/sports/sports02.png" alt=""/>
-                            </a>
-                            <div class="grid-cat">
-                                <a class="post-cat sports" href="#">ورزشی</a>
-                                <a class="post-cat tech" href="#">تکنولوژی</a>
-                            </div>
-                        </div>
-
-                        <div class="post-content">
-                            <h2 class="post-title">
-                                <a href="#">ستاره پاپ ژانگ رسانه های اجتماعی نیز بی گناه شناخته شده است</a>
-                            </h2>
-                            <div class="post-meta mb-7">
-                                <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                            </div>
-                        </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
-                </div><!-- slide-item end -->
-                <div class="item">
-                    <div class="post-block-style">
-                        <div class="post-thumb">
-                            <a href="#">
-                                <img class="img-fluid" src="images/news/lifestyle/image4.png" alt=""/>
-                            </a>
-                            <div class="grid-cat">
-                                <a class="post-cat tech" href="#">تکنولوژی</a>
-                            </div>
-                        </div>
-
-                        <div class="post-content">
-                            <h2 class="post-title">
-                                <a href="#">ستاره پاپ ژانگ رسانه های اجتماعی نیز بی گناه شناخته شده است</a>
-                            </h2>
-                            <div class="post-meta mb-7">
-                                <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                            </div>
-                        </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
-                </div><!-- slide-item end -->
-                <div class="item">
-                    <div class="post-block-style">
-                        <div class="post-thumb">
-                            <a href="#">
-                                <img class="img-fluid" src="images/news/fashion/image1.png" alt=""/>
-                            </a>
-                            <div class="grid-cat">
-                                <a class="post-cat lifestyle" href="#">سبک زندگی</a>
-                            </div>
-                        </div>
-
-                        <div class="post-content">
-                            <h2 class="post-title">
-                                <a href="#">جنیفر لوپز مجموعه دارایی خود را گسترش می دهد</a>
-                            </h2>
-                            <div class="post-meta mb-7">
-                                <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                            </div>
-                        </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
-                </div><!-- slide-item end -->
-                <div class="item">
-                    <div class="post-block-style">
-                        <div class="post-thumb">
-                            <a href="#">
-                                <img class="img-fluid" src="images/news/travel/image1.png" alt=""/>
-                            </a>
-                            <div class="grid-cat">
-                                <a class="post-cat travel" href="#">مسافرت</a>
-                            </div>
-                        </div>
-
-                        <div class="post-content">
-                            <h2 class="post-title">
-                                <a href="#">ما همیشه قبلاً ساکنان را گزارش کرده بودیم</a>
-                            </h2>
-                            <div class="post-meta mb-7">
-                                <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                            </div>
-                        </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
-                </div><!-- slide-item end -->
-                <div class="item">
-                    <div class="post-block-style">
-                        <div class="post-thumb">
-                            <a href="#">
-                                <img class="img-fluid" src="images/news/sports/sports02.png" alt=""/>
-                            </a>
-                            <div class="grid-cat">
-                                <a class="post-cat sports" href="#">ورزشی</a>
-                                <a class="post-cat tech" href="#">تکنولوژی</a>
-                            </div>
-                        </div>
-
-                        <div class="post-content">
-                            <h2 class="post-title">
-                                <a href="#">ستاره پاپ ژانگ رسانه های اجتماعی نیز بی گناه شناخته شده است</a>
-                            </h2>
-                            <div class="post-meta mb-7">
-                                <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                            </div>
-                        </div><!-- Post content end -->
-                    </div><!-- Post Block style end -->
-                </div><!-- slide-item end -->
-            </div>
-        </div>
-        <!-- ts-populer-post-box end-->
-    </div>
-    <!-- container end-->
-</section>
 <!-- .block slider -->
 
 <section class="block-wrapper">
@@ -2311,480 +2131,12 @@
 </div>
 <!-- ad banner end-->
 
-<section class="block-wrapper">
-    <div class="container">
-        <div class="row ts-gutter-30">
-            <div class="col-lg-8 col-md-12">
-                <h2 class="block-title">
-                    <span class="title-angle-shap"> از دست ندهید </span>
-                </h2>
-                <div class="row text-light ts-gutter-30">
-                    <div class="col-md-4">
-                        <div class="post-overaly-style post-sm"
-                             style="background-image:url(images/news/tech/image5.png)">
-                            <a href="#" class="image-link">&nbsp;</a>
-                            <div class="overlay-post-content">
-                                <div class="post-content">
-                                    <div class="grid-category">
-                                        <a class="post-cat tech" href="#">تکنولوژی</a>
-                                    </div>
-
-                                    <h2 class="post-title mb-0">
-                                        <a href="#">هفته گذشته این خانه تزریق می کرد</a>
-                                    </h2>
-                                </div>
-                            </div>
-                        </div><!-- post end -->
-                    </div><!-- end col -->
-                    <div class="col-md-4">
-                        <div class="post-overaly-style post-sm"
-                             style="background-image:url(images/news/health/image2.png)">
-                            <a href="#" class="image-link">&nbsp;</a>
-                            <div class="overlay-post-content">
-                                <div class="post-content">
-                                    <div class="grid-category">
-                                        <a class="post-cat health" href="#">سلامت</a>
-                                    </div>
-
-                                    <h2 class="post-title mb-0">
-                                        <a href="#">سیدنی برای اولین بار در سالها کاهش یافت</a>
-                                    </h2>
-                                </div>
-                            </div>
-                        </div><!-- post end -->
-                    </div><!-- end col -->
-                    <div class="col-md-4">
-                        <div class="post-overaly-style post-sm"
-                             style="background-image:url(images/news/travel/image3.png)">
-                            <a href="#" class="image-link">&nbsp;</a>
-                            <div class="overlay-post-content">
-                                <div class="post-content">
-                                    <div class="grid-category">
-                                        <a class="post-cat travel" href="#">مسافرت</a>
-                                    </div>
-
-                                    <h2 class="post-title mb-0">
-                                        <a href="#">هفته گذشته این خانه تزریق می کرد</a>
-                                    </h2>
-                                </div>
-                            </div>
-                        </div><!-- post end -->
-                    </div><!-- end col -->
-                    <div class="col-md-4">
-                        <div class="post-overaly-style post-sm"
-                             style="background-image:url(images/news/sports/sports02.png)">
-                            <a href="#" class="image-link">&nbsp;</a>
-                            <div class="overlay-post-content">
-                                <div class="post-content">
-                                    <div class="grid-category">
-                                        <a class="post-cat sports" href="#">ورزشی</a>
-                                    </div>
-
-                                    <h2 class="post-title mb-0">
-                                        <a href="#">سناتور پیشین هند</a>
-                                    </h2>
-                                </div>
-                            </div>
-                        </div><!-- post end -->
-                    </div><!-- end col -->
-                    <div class="col-md-4">
-                        <div class="post-overaly-style post-sm"
-                             style="background-image:url(images/news/lifestyle/image4.png)">
-                            <a href="#" class="image-link">&nbsp;</a>
-                            <div class="overlay-post-content">
-                                <div class="post-content">
-                                    <div class="grid-category">
-                                        <a class="post-cat fashion" href="#">مدل</a>
-                                    </div>
-
-                                    <h2 class="post-title mb-0">
-                                        <a href="#">راتکلیف به عنوان مدیر هوشمند</a>
-                                    </h2>
-                                </div>
-                            </div>
-                        </div><!-- post end -->
-                    </div><!-- end col -->
-                    <div class="col-md-4">
-                        <div class="post-overaly-style post-sm"
-                             style="background-image:url(images/news/tech/tech02.png)">
-                            <a href="#" class="image-link">&nbsp;</a>
-                            <div class="overlay-post-content">
-                                <div class="post-content">
-                                    <div class="grid-category">
-                                        <a class="post-cat tech" href="#">تکنولوژی</a>
-                                    </div>
-                                    <h2 class="post-title mb-0">
-                                        <a href="#">هفته گذشته این خانه تزریق می کرد</a>
-                                    </h2>
-                                </div>
-                            </div>
-                        </div><!-- post end -->
-                    </div><!-- end col -->
-                </div><!-- end row -->
-
-            </div><!-- Content Col end -->
-            <div class="col-lg-4 col-md-12">
-                <h2 class="block-title block-title-dark">
-                    <span class="title-angle-shap">اخبار اخیر </span>
-                </h2>
-                <div class="list-post-block">
-                    <ul class="list-post">
-                        <li>
-                            <div class="post-block-style media">
-                                <div class="post-thumb thumb-md">
-                                    <a href="#">
-                                        <img class="img-fluid" src="images/news/fashion/image3.png" alt="">
-                                    </a>
-                                </div><!-- Post thumb end -->
-
-                                <div class="post-content media-body">
-                                    <div class="grid-category">
-                                        <a class="post-cat tech-color" href="#">تکنولوژی</a>
-                                    </div>
-                                    <h2 class="post-title">
-                                        <a href="#">هفته گذشته این خانه تزریق می کرد</a>
-                                    </h2>
-                                    <div class="post-meta mb-7">
-                                        <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                                    </div>
-                                </div><!-- Post content end -->
-                            </div><!-- Post block style end -->
-                        </li><!-- Li 1 end -->
-                        <li>
-                            <div class="post-block-style media">
-                                <div class="post-thumb thumb-md">
-                                    <a href="#">
-                                        <img class="img-fluid" src="images/news/lifestyle/image3.png" alt="">
-                                    </a>
-                                </div><!-- Post thumb end -->
-
-                                <div class="post-content media-body">
-                                    <div class="grid-category">
-                                        <a class="post-cat travel-color" href="#">مسافرت</a>
-                                    </div>
-                                    <h2 class="post-title">
-                                        <a href="#">پاپ رسانه های اجتماعی ژانگ همچنین بی گناه شناخته شده است</a>
-                                    </h2>
-                                    <div class="post-meta mb-7">
-                                        <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                                    </div>
-                                </div><!-- Post content end -->
-                            </div><!-- Post block style end -->
-                        </li><!-- Li 2 end -->
-                        <li>
-                            <div class="post-block-style media">
-                                <div class="post-thumb thumb-md">
-                                    <a href="#">
-                                        <img class="img-fluid" src="images/news/health/image2.png" alt="">
-                                    </a>
-                                </div><!-- Post thumb end -->
-
-                                <div class="post-content media-body">
-                                    <div class="grid-category">
-                                        <a class="post-cat health-color" href="#">سلامت</a>
-                                    </div>
-                                    <h2 class="post-title">
-                                        <a href="#">جنیفر لوپز مجموعه دارایی خود را گسترش می دهد</a>
-                                    </h2>
-                                    <div class="post-meta mb-7">
-                                        <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                                    </div>
-                                </div><!-- Post content end -->
-                            </div><!-- Post block style end -->
-                        </li><!-- Li 3 end -->
-                        <li>
-                            <div class="post-block-style media">
-                                <div class="post-thumb thumb-md">
-                                    <a href="#">
-                                        <img class="img-fluid" src="images/news/health/image1.png" alt="">
-                                    </a>
-                                </div><!-- Post thumb end -->
-
-                                <div class="post-content media-body">
-                                    <div class="grid-category">
-                                        <a class="post-cat sports-color" href="#">ورزشی</a>
-                                    </div>
-                                    <h2 class="post-title">
-                                        <a href="#">سانتینو یک ساله ساکن لگان شد</a>
-                                    </h2>
-                                    <div class="post-meta mb-7">
-                                        <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                                    </div>
-                                </div><!-- Post content end -->
-                            </div><!-- Post block style end -->
-                        </li><!-- Li 3 end -->
-                    </ul><!-- List post end -->
-                </div>
-            </div><!-- Sidebar Col end -->
-        </div><!-- Row end -->
-    </div><!-- Container end -->
-</section><!-- First block end -->
+<!-- First block end -->
 
 <!-- post wraper start-->
-<section class="trending-slider full-width no-padding">
-    <div class="ts-grid-box">
-        <div class="owl-carousel" id="fullbox-slider">
-            <div class="item post-overaly-style post-lg" style="background-image:url(images/news/fashion/image1.png)">
-                <a href="#" class="image-link">&nbsp;</a>
-                <div class="overlay-post-content">
-                    <div class="post-content">
-                        <div class="grid-category">
-                            <a class="post-cat lifestyle" href="#">سبک زندگی</a>
-                            <a class="post-cat fashion" href="#">مدل</a>
-                        </div>
 
-                        <h2 class="post-title title-md">
-                            <a href="#">راتکلیف به عنوان مدیر اطلاعات ترامپ را نادیده گرفت </a>
-                        </h2>
-                        <div class="post-meta">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                <li class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Item 1 end -->
-            <div class="item post-overaly-style post-lg" style="background-image:url(images/news/tech/tech1.png)">
-                <a href="#" class="image-link">&nbsp;</a>
-                <div class="overlay-post-content">
-                    <div class="post-content">
-                        <div class="grid-category">
-                            <a class="post-cat tech" href="#">تکنولوژی</a>
-                        </div>
-
-                        <h2 class="post-title title-md">
-                            <a href="#">سانتینو ویلیام منطقه 9 ساله ساکن گیلروی هست</a>
-                        </h2>
-                        <div class="post-meta">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                <li class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Item 2 end -->
-            <div class="item post-overaly-style post-lg" style="background-image:url(images/news/fashion/image2.png)">
-                <a href="#" class="image-link">&nbsp;</a>
-                <div class="overlay-post-content">
-                    <div class="post-content">
-                        <div class="grid-category">
-                            <a class="post-cat health" href="#">سلامت</a>
-                        </div>
-
-                        <h2 class="post-title title-md">
-                            <a href="#">جنیفر لوپز مجموعه های املاک زیادی را گسترش می دهد</a>
-                        </h2>
-                        <div class="post-meta">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                <li class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Item 3 end -->
-            <div class="item post-overaly-style post-lg" style="background-image:url(images/news/lifestyle/image1.jpg)">
-                <a href="#" class="image-link">&nbsp;</a>
-                <div class="overlay-post-content">
-                    <div class="post-content">
-                        <div class="grid-category">
-                            <a class="post-cat lifestyle" href="#">سبک زندگی</a>
-                        </div>
-
-                        <h2 class="post-title title-md">
-                            <a href="#">نانسی ژانگ یک زن چینی و رسانه های اجتماعی</a>
-                        </h2>
-                        <div class="post-meta">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                <li class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Item 3 end -->
-        </div>
-        <!-- most-populers end-->
-    </div>
-</section>
 
 <!-- .section -->
-<section class="block-wrapper">
-    <div class="container">
-        <div class="row ts-gutter-30">
-            <div class="col-lg-8 col-md-12">
-                <h2 class="block-title">
-                    <span class="title-angle-shap">بعدی را بخوانید </span>
-                </h2>
-                <div class="row ts-gutter-20">
-                    <div class="col-md-6">
-                        <div class="post-block-style">
-                            <div class="post-thumb">
-                                <a href="#">
-                                    <img class="img-fluid" src="images/news/tech/image5.png" alt="">
-                                </a>
-                                <div class="grid-cat">
-                                    <a class="post-cat tech" href="#">تکنولوژی</a>
-                                </div>
-                            </div>
-
-                            <div class="post-content">
-                                <h2 class="post-title">
-                                    <a href="#">جنیفر لوپز مجموعه دارایی خود را گسترش می دهد</a>
-                                </h2>
-                                <div class="post-meta mb-7">
-                                    <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                                </div>
-                            </div><!-- Post content end -->
-                        </div>
-                    </div><!-- end col -->
-                    <div class="col-md-6">
-                        <div class="post-block-style">
-                            <div class="post-thumb">
-                                <a href="#">
-                                    <img class="img-fluid" src="images/news/fashion/image4.png" alt="">
-                                </a>
-                                <div class="grid-cat">
-                                    <a class="post-cat food" href="#">غذا</a>
-                                </div>
-                            </div>
-
-                            <div class="post-content">
-                                <h2 class="post-title">
-                                    <a href="#">ستاره پاپ ژانگ رسانه های اجتماعی همچنین گانگستر بی گناه شناخته شده
-                                        است</a>
-                                </h2>
-                                <div class="post-meta mb-7">
-                                    <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                                </div>
-                            </div><!-- Post content end -->
-                        </div>
-                    </div><!-- end col -->
-                    <div class="col-md-6">
-                        <div class="post-block-style">
-                            <div class="post-thumb">
-                                <a href="#">
-                                    <img class="img-fluid" src="images/news/lifestyle/image1.jpg" alt="">
-                                </a>
-                                <div class="grid-cat">
-                                    <a class="post-cat tech" href="#">تکنولوژی</a>
-                                </div>
-                            </div>
-
-                            <div class="post-content">
-                                <h2 class="post-title">
-                                    <a href="#">سانتینو جانسون ساکن یک ساله گیلروی را بی گناه معرفی کرد</a>
-                                </h2>
-                                <div class="post-meta mb-7">
-                                    <span class="post-author"><a href="#"><i
-                                            class="fa fa-user"></i> جعفر عباسی</a></span>
-                                    <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                                </div>
-                            </div><!-- Post content end -->
-                        </div>
-                    </div><!-- end col -->
-                    <div class="col-md-6">
-                        <div class="post-block-style">
-                            <div class="post-thumb">
-                                <a href="#">
-                                    <img class="img-fluid" src="images/news/food/food01.png" alt="">
-                                </a>
-                                <div class="grid-cat">
-                                    <a class="post-cat food" href="#">غذا</a>
-                                </div>
-                            </div>
-
-                            <div class="post-content">
-                                <h2 class="post-title">
-                                    <a href="#">سانتینو جانسون ساکن یک ساله گیلروی را بی گناه معرفی کرد</a>
-                                </h2>
-                                <div class="post-meta mb-7">
-                                    <span class="post-author"><a href="#"><i
-                                            class="fa fa-user"></i> جعفر عباسی</a></span>
-                                    <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                                </div>
-                            </div><!-- Post content end -->
-                        </div>
-                    </div><!-- end col -->
-                </div><!-- end row -->
-                <div class="gap-30"></div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="load-more-btn text-center">
-                            <button class="btn"> ادامه مطلب</button>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Content Col end -->
-            <div class="col-lg-4 col-md-12">
-                <h2 class="block-title block-title-dark">
-                    <span class="title-angle-shap">نظرات اخیر </span>
-                </h2>
-                <div class="ts-author-comments">
-                    <div class="row ts-comments-row align-items-center mb-50">
-                        <div class="col-lg-4 col-md-2">
-                            <div class="ts-author-media">
-                                <div class="ts-author-thumb">
-                                    <img src="images/news/author.png" alt="">
-                                    <div class="ts-author-meta"> خرداد 1399</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-8 col-md-10">
-                            <div class="ts-author-content">
-                                <div class="comment">
-                                    <a href="#"> املاک هیدن هیلس با چشم انداز کوه و شهر دارای 9 اتاق خواب ، از جمله بزرگ
-                                        است </a>
-                                </div>
-                                <div class="ts-author">توسط <a href="#"> جعفر عباسی </a></div>
-                            </div>
-                        </div>
-                    </div><!-- ts-comments-row end -->
-                    <div class="row ts-comments-row align-items-center mb-50">
-                        <div class="col-lg-4 col-md-2">
-                            <div class="ts-author-media">
-                                <div class="ts-author-thumb">
-                                    <img src="images/news/user2.png" alt="">
-                                    <div class="ts-author-meta"> خرداد 1399</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-8 col-md-10">
-                            <div class="ts-author-content">
-                                <div class="comment">
-                                    <a href="#"> طبق گزارش ها ، لوپز املاک هشت هکتار در ملک بل-ایر را به دارایی های
-                                        املاک خود اضافه کرده است </a>
-                                </div>
-                                <div class="ts-author">توسط <a href="#"> جعفر عباسی </a></div>
-                            </div>
-                        </div>
-                    </div><!-- ts-comments-row end -->
-                    <div class="row ts-comments-row align-items-center mb-50">
-                        <div class="col-lg-4 col-md-2">
-                            <div class="ts-author-media">
-                                <div class="ts-author-thumb">
-                                    <img src="images/news/user1.png" alt="">
-                                    <div class="ts-author-meta"> خرداد 1399</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-8 col-md-10">
-                            <div class="ts-author-content">
-                                <div class="comment">
-                                    <a href="#"> املاک هیدن هیلس با چشم انداز کوه و شهر دارای 9 اتاق خواب ، از جمله بزرگ
-                                        است </a>
-                                </div>
-                                <div class="ts-author">توسط <a href="#"> جعفر عباسی </a></div>
-                            </div>
-                        </div>
-                    </div><!-- ts-comments-row end -->
-                </div>
-            </div><!-- Sidebar Col end -->
-        </div><!-- Row end -->
-    </div><!-- Container end -->
-</section><!-- First block end -->
 
 <!-- ad banner start-->
 <div class="block-wrapper no-padding">

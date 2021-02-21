@@ -12,13 +12,11 @@ class IndexPage(View):
 
     def get(self, request, *args, **kwargs):
         context = {}
-        four_most_views = self.model.objects.filter(date_published__gt=datetime.date.today() -
-                                                                       datetime.timedelta(days=7)).order_by("-views")[
-                          :4]
-        date_ordered_posts = self.model.objects.order_by("-date_published")
-        rondHa = date_ordered_posts[:12]
-        print(rondHa[3].image.url)
-        last_post = date_ordered_posts[:1]
-        context["rondHa"] = rondHa
-        context["four_most_views"] = four_most_views
+        views_sorted_posts = self.model.objects.order_by("-views")
+        week_most_views = views_sorted_posts.filter(
+            date_published__gt=datetime.date.today() - datetime.timedelta(days=7))
+        date_sorted_posts = self.model.objects.order_by("-date_published")
+        context["last_news_carousel"] = date_sorted_posts[:12]
+        context["four_most_views"] = week_most_views[:4]
+        context["last_post"] = date_sorted_posts[0]
         return render(request, self.template_name, context)
