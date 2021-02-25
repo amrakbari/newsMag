@@ -6,7 +6,7 @@
     <!-- Basic Page Needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>دیجی کول - قالب خبری خلاق HTML</title>
+    <title>نیوزمگ</title>
 
     <!-- Mobile Specific Metas
     ================================================== -->
@@ -14,8 +14,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--Favicon-->
-    <link rel="shortcut icon" href={% static "images/favicon.ico" %} type="image/x-icon">
-    <link rel="icon" href={% static "images/favicon.ico" %} type="image/x-icon">
+    {#    <link rel="shortcut icon" href={% static "images/favicon.ico" %} type="image/x-icon">#}
+    {#    <link rel="icon" href={% static "images/favicon.ico" %} type="image/x-icon">#}
 
     <!-- CSS
     ================================================== -->
@@ -680,94 +680,33 @@
                     <span class="title-angle-shap"> آخر هفته</span>
                 </h2>
             </div>
-            <div class="col-md-3">
-                <div class="post-block-style">
-                    <div class="post-thumb">
-                        <a href="#">
-                            <img class="img-fluid" src="images/news/fashion/image1.png" alt="">
-                        </a>
-                        <div class="grid-cat">
-                            <a class="post-cat tech" href="#">تکنولوژی</a>
-                        </div>
-                    </div>
+            {% block last_posts %}
+                {% for post in four_last_posts %}
+                    <div class="col-md-3">
+                        <div class="post-block-style">
+                            <div class="post-thumb">
+                                <a href="#">
+                                    <img class="img-fluid" src={{ post.image.url }} alt="">
+                                </a>
+                                <div class="grid-cat">
+                                    <a class="post-cat tech" href="#">{{ post.category }}</a>
+                                </div>
+                            </div>
 
-                    <div class="post-content">
-                        <h2 class="post-title">
-                            <a href="#">راتکلیف مدیرعامل استعدادهای ملی است و همیشه خوشحال</a>
-                        </h2>
-                        <div class="post-meta mb-7">
-                            <span class="post-author"><a href="#"><i class="fa fa-user"></i> جعفر عباسی</a></span>
-                            <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                        </div>
-                    </div><!-- Post content end -->
-                </div><!-- post-block -->
-            </div><!-- col end -->
-            <div class="col-md-3">
-                <div class="post-block-style">
-                    <div class="post-thumb">
-                        <a href="#">
-                            <img class="img-fluid" src="images/news/health/image1.png" alt="">
-                        </a>
-                        <div class="grid-cat">
-                            <a class="post-cat tech" href="#">تکنولوژی</a>
-                        </div>
+                            <div class="post-content">
+                                <h2 class="post-title">
+                                    <a href="#">{{ post.title }}</a>
+                                </h2>
+                                <div class="post-meta mb-7">
+                                    <span class="post-author"><a href="#"><i
+                                            class="fa fa-user"></i>{{ post.author }}</a></span>
+                                    <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
+                                </div>
+                            </div><!-- Post content end -->
+                        </div><!-- post-block -->
                     </div>
-
-                    <div class="post-content">
-                        <h2 class="post-title">
-                            <a href="#">ستاره پاپ ژانگ رسانه های اجتماعی نیز بی گناه شناخته شده است</a>
-                        </h2>
-                        <div class="post-meta mb-7">
-                            <span class="post-author"><a href="#"><i class="fa fa-user"></i> جعفر عباسی</a></span>
-                            <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                        </div>
-                    </div><!-- Post content end -->
-                </div><!-- post-block -->
-            </div><!-- col end -->
-            <div class="col-md-3">
-                <div class="post-block-style">
-                    <div class="post-thumb">
-                        <a href="#">
-                            <img class="img-fluid" src="images/news/tech/tech02.png" alt="">
-                        </a>
-                        <div class="grid-cat">
-                            <a class="post-cat tech" href="#">تکنولوژی</a>
-                        </div>
-                    </div>
-
-                    <div class="post-content">
-                        <h2 class="post-title">
-                            <a href="#">ستاره پاپ ژانگ رسانه های اجتماعی نیز بی گناه شناخته شده است</a>
-                        </h2>
-                        <div class="post-meta mb-7">
-                            <span class="post-author"><a href="#"><i class="fa fa-user"></i> جعفر عباسی</a></span>
-                            <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                        </div>
-                    </div><!-- Post content end -->
-                </div><!-- post-block -->
-            </div><!-- col end -->
-            <div class="col-md-3">
-                <div class="post-block-style">
-                    <div class="post-thumb">
-                        <a href="#">
-                            <img class="img-fluid" src="images/news/health/image2.png" alt="">
-                        </a>
-                        <div class="grid-cat">
-                            <a class="post-cat tech" href="#">تکنولوژی</a>
-                        </div>
-                    </div>
-
-                    <div class="post-content">
-                        <h2 class="post-title">
-                            <a href="#">ستاره پاپ ژانگ رسانه های اجتماعی نیز بی گناه شناخته شده است</a>
-                        </h2>
-                        <div class="post-meta mb-7">
-                            <span class="post-author"><a href="#"><i class="fa fa-user"></i> جعفر عباسی</a></span>
-                            <span class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</span>
-                        </div>
-                    </div><!-- Post content end -->
-                </div><!-- post-block -->
-            </div><!-- col end -->
+                {% endfor %}
+            {% endblock last_posts %}
         </div><!-- row end -->
     </div>
 </section>
@@ -1532,87 +1471,30 @@
 <section class="trending-slider full-width no-padding">
     <div class="ts-grid-box">
         <div class="owl-carousel" id="fullbox-slider">
-            <div class="item post-overaly-style post-lg" style="background-image:url(images/news/fashion/image1.png)">
-                <a href="#" class="image-link">&nbsp;</a>
-                <div class="overlay-post-content">
-                    <div class="post-content">
-                        <div class="grid-category">
-                            <a class="post-cat lifestyle" href="#">سبک زندگی</a>
-                            <a class="post-cat fashion" href="#">مدل</a>
-                        </div>
+            {% block most_comments_carousel %}
+                {% for post in most_comment_carousel %}
+                    <div class="item post-overaly-style post-lg" style="background-image:url({{ post.image.url }})">
+                        <a href="#" class="image-link">&nbsp;</a>
+                        <div class="overlay-post-content">
+                            <div class="post-content">
+                                <div class="grid-category">
+                                    <a class="post-cat fashion" href="#">{{ post.category }}</a>
+                                </div>
 
-                        <h2 class="post-title title-md">
-                            <a href="#">راتکلیف به عنوان مدیر اطلاعات ترامپ را نادیده گرفت </a>
-                        </h2>
-                        <div class="post-meta">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                <li class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</li>
-                            </ul>
+                                <h2 class="post-title title-md">
+                                    <a href="#">{{ post.title }}</a>
+                                </h2>
+                                <div class="post-meta">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-user"></i>{{ post.author }}</a></li>
+                                        <li class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div><!-- Item 1 end -->
-            <div class="item post-overaly-style post-lg" style="background-image:url(images/news/tech/tech1.png)">
-                <a href="#" class="image-link">&nbsp;</a>
-                <div class="overlay-post-content">
-                    <div class="post-content">
-                        <div class="grid-category">
-                            <a class="post-cat tech" href="#">تکنولوژی</a>
-                        </div>
-
-                        <h2 class="post-title title-md">
-                            <a href="#">سانتینو ویلیام منطقه 9 ساله ساکن گیلروی هست</a>
-                        </h2>
-                        <div class="post-meta">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                <li class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Item 2 end -->
-            <div class="item post-overaly-style post-lg" style="background-image:url(images/news/fashion/image2.png)">
-                <a href="#" class="image-link">&nbsp;</a>
-                <div class="overlay-post-content">
-                    <div class="post-content">
-                        <div class="grid-category">
-                            <a class="post-cat health" href="#">سلامت</a>
-                        </div>
-
-                        <h2 class="post-title title-md">
-                            <a href="#">جنیفر لوپز مجموعه های املاک زیادی را گسترش می دهد</a>
-                        </h2>
-                        <div class="post-meta">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                <li class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Item 3 end -->
-            <div class="item post-overaly-style post-lg" style="background-image:url(images/news/lifestyle/image1.jpg)">
-                <a href="#" class="image-link">&nbsp;</a>
-                <div class="overlay-post-content">
-                    <div class="post-content">
-                        <div class="grid-category">
-                            <a class="post-cat lifestyle" href="#">سبک زندگی</a>
-                        </div>
-
-                        <h2 class="post-title title-md">
-                            <a href="#">نانسی ژانگ یک زن چینی و رسانه های اجتماعی</a>
-                        </h2>
-                        <div class="post-meta">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-user"></i> جان ویک</a></li>
-                                <li class="post-date"><i class="fa fa-clock-o"></i> خرداد 1399</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Item 3 end -->
+                {% endfor %}
+            {% endblock most_comments_carousel %}
         </div>
         <!-- most-populers end-->
     </div>
