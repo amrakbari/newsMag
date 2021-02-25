@@ -24,3 +24,4 @@ class Post(models.Model):
     date_published = models.DateTimeField(default=datetime.datetime.now())
     image = models.ImageField(upload_to=upload_image_path, blank=True, null=True, max_length=200)
     description = models.TextField()
+    comment_cnt = models.IntegerField(default=0)
